@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require angular.min
 //= require angular-route.min
-//= require_tree .
+//= require angular-ui-router.min
+//= require routes
+//= require_tree ./controllers
