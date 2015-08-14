@@ -9,13 +9,14 @@ angular.module('WAMO').controller('moveListController', [
       data = _.filter(data, function(move) {
         return move.startup > 0;
       });
+      followupService.allMoves = data;
       minStartupMove = _.min(data, function(move) {
         return move.startup;
       });
-      followupService.moves = _.filter(data, function(move) {
+      followupService.linkableMoves = _.filter(followupService.allMoves, function(move) {
         return move.adv_hit >= minStartupMove.startup;
       });
-      return $scope.moves = followupService.moves;
+      return $scope.moves = followupService.linkableMoves;
     });
     return $scope.linkOptions = function(adv) {
       return followupService.calcOptions(adv);

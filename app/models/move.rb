@@ -1,7 +1,9 @@
 require 'csv'
+require 'htmlentities'
 
 class Move < ActiveRecord::Base
 	def self.import
+		coder = HTMLEntities.new
 		Dir.foreach('./framedata') do |item|
 			next if item == '.' or item == '..'
 			if File.extname(item) == '.csv'
@@ -15,7 +17,7 @@ class Move < ActiveRecord::Base
 							startup = 0
 						end
 						Move.create(
-							name: row[0],
+							name: coder.decode(row[0]),
 							startup: startup,
 							char: charname,
 							active: row[7],

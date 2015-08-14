@@ -7,12 +7,12 @@ FollowupService = function() {
   self.followups = [];
   self.calcOptions = function(adv) {
     self.followups = [];
-    _.each(self.moves, function(element, index) {
+    _.each(self.allMoves, function(element, index) {
       var difficulty;
-      if (element.startup !== 0) {
+      if (element.startup !== 0 && element.recovery !== 0) {
         difficulty = adv - element.startup + 1;
         element.difficulty = difficulty;
-        if (difficulty > 0) {
+        if (difficulty >= -2) {
           return self.followups.push(element);
         }
       }

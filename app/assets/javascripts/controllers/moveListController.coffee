@@ -6,11 +6,12 @@ angular.module 'WAMO'
 	.success (data) ->
 		data = _.filter	data, (move) ->
 			move.startup > 0
+		followupService.allMoves = data
 		minStartupMove = _.min data, (move) ->
 			move.startup 
-		followupService.moves = _.filter data, (move) ->
+		followupService.linkableMoves = _.filter followupService.allMoves, (move) ->
 			move.adv_hit >= minStartupMove.startup
-		$scope.moves = followupService.moves
+		$scope.moves = followupService.linkableMoves
 	$scope.linkOptions = (adv) ->
 		followupService.calcOptions(adv)
 ]
