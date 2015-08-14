@@ -9,9 +9,14 @@ class Move < ActiveRecord::Base
 				rowcount = 0
 				CSV.foreach("./framedata/#{item}") do |row|
 					if rowcount >= 1
+						begin
+							startup = eval(row[6])
+						rescue Exception
+							startup = 0
+						end
 						Move.create(
 							name: row[0],
-							startup: row[6],
+							startup: startup,
 							char: charname,
 							active: row[7],
 							recovery: row[8],

@@ -1,7 +1,12 @@
-<table class="table-hover">
-	<tr ng-repeat="move in moves" ng-click="test(move.id)">
+<table class="table-hover col-md-6">
+	<tr>
+		<th>move name</th>
+		<th>startup</th>
+		<th>adv on hit</th>
+	<tr>
+	<tr ng-repeat="move in moves" ng-mouseover="linkOptions(move.adv_hit)">
 		<td>{{move.name}}</td>
 		<td>{{move.startup}}</td>
-		<td>{{move.active}}</td>
+		<td>{{move.adv_hit}}</td>
 	</tr>
 </table>

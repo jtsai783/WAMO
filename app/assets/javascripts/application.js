@@ -16,5 +16,7 @@
 //= require angular.min
 //= require angular-route.min
 //= require angular-ui-router.min
+//= require underscore-min
 //= require routes
+//= require_tree ./services
 //= require_tree ./controllers
