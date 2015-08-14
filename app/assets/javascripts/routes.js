@@ -4,12 +4,12 @@ angular.module('WAMO', ['ui.router']).config(function($stateProvider, $urlRouter
   return $stateProvider.state('char', {
     url: '/:char',
     views: {
-      'header': {
+      'movelist': {
         templateUrl: '/assets/views/movelist.html',
         controller: 'moveListController'
       },
       'followup': {
-        template: 'HELLO YOU'
+        template: 'HELLO Me'
       }
     }
   });

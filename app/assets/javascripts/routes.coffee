@@ -5,8 +5,8 @@ angular.module 'WAMO', ['ui.router']
 	.state 'char',
 		url: '/:char'
 		views: 
-			'header':
+			'movelist':
 				templateUrl: '/assets/views/movelist.html'
 				controller: 'moveListController'
 			'followup':
-				template: 'HELLO YOU'
+				template: 'HELLO Me'
