@@ -5,17 +5,13 @@ angular.module 'WAMO'
 	templateUrl: '/assets/views/menu.html'
 	controller: 'menuController'
 	controllerAs: 'menuCtrl'
+	bindToController: true
 	scope:
-		icon: '@'
-		visibility: '='
+		iconOpen: '@iconOpen'
+		iconClose: '@iconClose'
 	link: (scope, element, attrs) ->
+		iconOpen = scope.menuCtrl.iconOpen
+		iconClose = scope.menuCtrl.iconClose
 		$('.menu-icon').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", -> 
-			$('.icon-arrow').removeClass('test-class')
-			$('.icon-arrow').addClass('test-class-2')
-			console.log 'test-class removed'
+			$('.icon-arrow').toggleClass("#{iconOpen} #{iconClose}")
 		)
-		scope.toggleMenu = ->
-			if scope.menuCtrl.visibility == true
-				scope.menuCtrl.visibility = false
-			else
-				scope.menuCtrl.visibility = true

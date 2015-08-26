@@ -6,23 +6,18 @@ angular.module('WAMO').directive('menu', function() {
     templateUrl: '/assets/views/menu.html',
     controller: 'menuController',
     controllerAs: 'menuCtrl',
+    bindToController: true,
     scope: {
-      icon: '@',
-      visibility: '='
+      iconOpen: '@iconOpen',
+      iconClose: '@iconClose'
     },
     link: function(scope, element, attrs) {
-      $('.menu-icon').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
-        $('.icon-arrow').removeClass('test-class');
-        $('.icon-arrow').addClass('test-class-2');
-        return console.log('test-class removed');
+      var iconClose, iconOpen;
+      iconOpen = scope.menuCtrl.iconOpen;
+      iconClose = scope.menuCtrl.iconClose;
+      return $('.menu-icon').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+        return $('.icon-arrow').toggleClass(iconOpen + " " + iconClose);
       });
-      return scope.toggleMenu = function() {
-        if (scope.menuCtrl.visibility === true) {
-          return scope.menuCtrl.visibility = false;
-        } else {
-          return scope.menuCtrl.visibility = true;
-        }
-      };
     }
   };
 });
