@@ -3,7 +3,7 @@ angular.module('WAMO').directive('menu', function() {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: '/assets/views/menu.html',
+    templateUrl: '/views/menu.html',
     controller: 'menuController',
     controllerAs: 'menuCtrl',
     bindToController: true,

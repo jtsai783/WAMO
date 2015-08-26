@@ -5,11 +5,11 @@ angular.module('WAMO', ['ui.router']).config(function($stateProvider, $urlRouter
     url: '/:char',
     views: {
       'movelist': {
-        templateUrl: '/assets/views/movelist.html',
+        templateUrl: '/views/movelist.html',
         controller: 'moveListController'
       },
       'followup': {
-        templateUrl: '/assets/views/followup.html',
+        templateUrl: '/views/followup.html',
         controller: 'followUpController'
       }
     }

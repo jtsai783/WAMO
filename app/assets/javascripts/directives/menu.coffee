@@ -2,7 +2,7 @@ angular.module 'WAMO'
 .directive 'menu', ->
 	restrict: 'E'
 	transclude: true
-	templateUrl: '/assets/views/menu.html'
+	templateUrl: '/views/menu.html'
 	controller: 'menuController'
 	controllerAs: 'menuCtrl'
 	bindToController: true
