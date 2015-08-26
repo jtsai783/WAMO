@@ -1,3 +1,32 @@
 // Place all the styles related to the static_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.slide-menu{
+	width: 240px;
+	height: 100%;
+	background: rgba(black, 0.5);
+	position: fixed;
+	left: -240px;
+	top: 0px;
+	a{
+		display: block;
+	}
+	&.open{
+		left: 0px;
+	}
+}
+
+.menu-icon{
+	position: fixed;
+	top: 50%;
+	left: 0px;
+	&.open{
+		left: 240px;
+	}
+}
+
+.open-menu{
+	position: fixed;
+	top: 50%;
+	transition: all 0.3s ease;
+}
