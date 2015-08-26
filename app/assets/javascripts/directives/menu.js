@@ -5,14 +5,23 @@ angular.module('WAMO').directive('menu', function() {
     transclude: true,
     templateUrl: '/assets/views/menu.html',
     controller: 'menuController',
+    controllerAs: 'menuCtrl',
     scope: {
       icon: '@',
       visibility: '='
     },
     link: function(scope, element, attrs) {
-      console.log("linked");
+      $('.menu-icon').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
+        $('.icon-arrow').removeClass('test-class');
+        $('.icon-arrow').addClass('test-class-2');
+        return console.log('test-class removed');
+      });
       return scope.toggleMenu = function() {
-        return console.log(scope);
+        if (scope.menuCtrl.visibility === true) {
+          return scope.menuCtrl.visibility = false;
+        } else {
+          return scope.menuCtrl.visibility = true;
+        }
       };
     }
   };

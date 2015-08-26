@@ -8,6 +8,7 @@
 	position: fixed;
 	left: -240px;
 	top: 0px;
+	transition: all 0.3s ease;
 	a{
 		display: block;
 	}
@@ -20,6 +21,7 @@
 	position: fixed;
 	top: 50%;
 	left: 0px;
+	transition: all 0.3s ease;
 	&.open{
 		left: 240px;
 	}

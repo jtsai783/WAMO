@@ -1,6 +1,6 @@
-<div class="menu-icon" ng-class="{open: visibility}" ng-click="toggleMenu()">
-	<span class="{{icon}}" aria-hidden="true"></span>
+<div class="menu-icon" ng-class="{open: menuCtrl.visibility}" ng-click="toggleMenu()">
+	<span class="{{icon}} icon-arrow test-class" aria-hidden="true"></span>
 </div>
-<div class="slide-menu" ng-class="{open: visibility}">
+<div class="slide-menu" ng-class="{open: menuCtrl.visibility}">
 	<ng-transclude></ng-transclude>
 </div>
